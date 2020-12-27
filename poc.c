@@ -26,7 +26,7 @@ typedef NTSTATUS(NTAPI NtDeviceIoControlFile)(
 PVOID P;
 int main() {
 
-    HANDLE hDriver = CreateFileA(.GLOBALROOTDeviceCloudATDriverDevice, GENERIC_READ  GENERIC_WRITE, 0, NULL, OPEN_EXISTING, 0, NULL);
+    HANDLE hDriver = CreateFileA("\\\\.\\GLOBALROOT\\Device\\CloudATDriverDevice", GENERIC_READ  GENERIC_WRITE, 0, NULL, OPEN_EXISTING, 0, NULL);
     ULONG dw;
     if (hDriver == INVALID_HANDLE_VALUE) {
         system(pause);
